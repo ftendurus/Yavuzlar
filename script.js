@@ -3,7 +3,6 @@ let questions = [
   { question: "Soru 2", options: ["A şıkkı", "B şıkkı", "C şıkkı", "D şıkkı"], correct: 1, difficulty: "Orta" }
 ];
 
-// Function to save a new question
 function saveQuestion() {
   let questionText = document.getElementById("question-text").value;
   let difficulty = document.getElementById("difficulty").value;
@@ -16,7 +15,6 @@ function saveQuestion() {
   window.location.href = "list-questions.html";
 }
 
-// Function to display all questions in the list page
 function showQuestionList() {
   const questionList = document.getElementById("questions");
   questionList.innerHTML = "";
@@ -28,19 +26,16 @@ function showQuestionList() {
   });
 }
 
-// Function to delete a question
 function deleteQuestion(index) {
   questions.splice(index, 1);
   showQuestionList();
 }
 
-// Function to edit a question (for edit-question.html)
 function editQuestion(index) {
   const question = questions[index];
   window.location.href = `edit-question.html?index=${index}`;
 }
 
-// Function to load question into edit form in the edit page
 function loadEditQuestion() {
   const params = new URLSearchParams(window.location.search);
   const index = params.get('index');
