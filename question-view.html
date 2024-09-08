@@ -1,43 +1,29 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Anasayfa</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soru Görüntüle</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <div class="container" style="color: white;">
-    <div id="question-form" class="hidden">
-        <h2>Soru Ekle/Düzenle</h2>
-        <input type="text" id="question-text" placeholder="Soru Girin">
-        <input type="text" id="difficulty" placeholder="Zorluk Derecesi (Kolay, Orta, Zor)">
-        <ul>
-            <li><input type="radio" name="option" value="A"> <input type="text" placeholder="A Şıkkı"></li>
-            <li><input type="radio" name="option" value="B"> <input type="text" placeholder="B Şıkkı"></li>
-            <li><input type="radio" name="option" value="C"> <input type="text" placeholder="C Şıkkı"></li>
-            <li><input type="radio" name="option" value="D"> <input type="text" placeholder="D Şıkkı"></li>
+    <div class="container" style="color: white;">
+        <h1>Soru Detayları</h1>
+        <p><strong>Soru:</strong> <span id="question-text"></span></p>
+        <p><strong>Zorluk Derecesi:</strong> <span id="difficulty"></span></p>
+        <p><strong>Şıklar:</strong></p>
+        <ul id="options-list">
         </ul>
-        <button onclick="saveQuestion()">Soruyu Kaydet</button>
+        <button onclick="submitAnswer()">Cevapla</button>
+        <button onclick="window.location.href='list-questions.html'">Geri Dön</button>
     </div>
-        <div class="navbar">
-          <a href="questions.html">
-            <div class="navbarButton">
-              Sorulari Listele
-            </div>
-          </a>
-        </div>
-       </div> 
 
-
-
-  </div>
-  </div>
-
-  <script src="script.js"></script>
-
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", loadQuestion);
+    </script>
 </body>
 
 </html>

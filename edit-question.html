@@ -1,30 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Soru Düzenle</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="container">
+    <div class="container" style="color: white;">
         <h1>Soru Düzenleme Sayfası</h1>
+        <label for="question-text">Soru:</label>
         <input type="text" id="question-text" placeholder="Soru Girin">
-        <input type="text" id="difficulty" placeholder="Zorluk Derecesi (Kolay, Orta, Zor)">
+
+        <label for="difficulty">Zorluk Derecesi:</label>
+        <input type="text" id="difficulty" placeholder="Kolay, Orta, Zor">
+
         <ul>
-            <li><input type="radio" name="option" value="0"> <input type="text" placeholder="A Şıkkı"></li>
-            <li><input type="radio" name="option" value="1"> <input type="text" placeholder="B Şıkkı"></li>
-            <li><input type="radio" name="option" value="2"> <input type="text" placeholder="C Şıkkı"></li>
-            <li><input type="radio" name="option" value="3"> <input type="text" placeholder="D Şıkkı"></li>
+            <li><input type="radio" name="option" value="0"> <input type="text" class="option-text" placeholder="A Şıkkı"></li>
+            <li><input type="radio" name="option" value="1"> <input type="text" class="option-text" placeholder="B Şıkkı"></li>
+            <li><input type="radio" name="option" value="2"> <input type="text" class="option-text" placeholder="C Şıkkı"></li>
+            <li><input type="radio" name="option" value="3"> <input type="text" class="option-text" placeholder="D Şıkkı"></li>
         </ul>
+
         <button onclick="saveQuestion()">Soruyu Kaydet</button>
         <br><br>
-        <a href="list-questions.html">Soruları Listele</a>
+        <a href="list-questions.html" style="color: white;">Soruları Listele</a>
     </div>
 
-    <script src="js/script.js"></script>
+    <script src="script.js"></script>
+    <script>document.addEventListener("DOMContentLoaded", loadEditQuestion);</script>
 </body>
 
 </html>
